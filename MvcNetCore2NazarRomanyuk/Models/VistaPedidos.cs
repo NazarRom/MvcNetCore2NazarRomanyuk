@@ -8,7 +8,7 @@ namespace MvcNetCore2NazarRomanyuk.Models
     {
         [Key]
         [Column("IDVISTAPEDIDOS")]
-        public Int64 IdUsuario { get; set; }
+        public Int64 IdVistapedidos { get; set; }
         [Column("Idusuario")]
         public int IdUser { get; set; }
         [Column("Nombre")]

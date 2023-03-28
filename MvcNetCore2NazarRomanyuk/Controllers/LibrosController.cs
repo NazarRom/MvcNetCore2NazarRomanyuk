@@ -108,11 +108,12 @@ namespace MvcNetCore2NazarRomanyuk.Controllers
                 this.repo.InsertPedido(ids, iduser);
             }
             HttpContext.Session.Remove("IdLibros");
-            return RedirectToAction("VistaPedidos", iduser);
+            return RedirectToAction("VistaPedidosResult");
         }
 
-       public IActionResult VistaPedidos(int iduser)
+       public IActionResult VistaPedidosResult()
         {
+            int iduser = int.Parse(HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
             List<VistaPedidos> pedidos = this.repo.GetVistasPedidos(iduser);
             return View(pedidos);
         }

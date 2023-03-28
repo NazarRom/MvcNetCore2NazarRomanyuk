@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<MvcNetCore2NazarRomanyuk.Models.VistaPedidos>
 
 @{
-    ViewData["Title"] = "VistaPedidos";
+    ViewData["Title"] = "VistaPedidosResult";
 }
 
-<h1>VistaPedidos</h1>
+<h1>VistaPedidosResult</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,7 +13,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.IdUsuario)
+                @Html.DisplayNameFor(model => model.IdVistapedidos)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.IdUser)
@@ -40,7 +40,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.IdUsuario)
+                @Html.DisplayFor(modelItem => item.IdVistapedidos)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.IdUser)
@@ -58,7 +58,7 @@
                 @Html.DisplayFor(modelItem => item.Precio)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Portada)
+                <img src="~/images/@item.Portada" style="width:200px; height:200px;" />
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |

@@ -104,7 +104,7 @@ namespace MvcNetCore2NazarRomanyuk.Repositories
         public List<VistaPedidos> GetVistasPedidos(int iduser)
         {
             var consulta = from data in this.context.VistaPedidos
-                           where data.IdUsuario == iduser
+                           where data.IdUser == iduser
                            select data;
             return consulta.ToList();
         }
