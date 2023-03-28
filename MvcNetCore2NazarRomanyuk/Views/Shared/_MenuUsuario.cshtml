@@ -1,0 +1,15 @@
+﻿@using System.Security.Claims
+
+@if (Context.User.Identity.IsAuthenticated == false)
+{
+    <a asp-controller="Libros" asp-action="PerfilUsuario" class="nav-link text-dark">Log In</a>
+}
+else
+{
+   
+   // <h2>Libros : @sesionList</h2>
+    <img src="~/images/@Context.User.FindFirstValue("Foto")"  style="width:20px; height:20px" />
+    <p>@Context.User.Identity.Name</p>
+  <a asp-controller="Managed" asp-action="LogOut" class="nav-link text-dark">Cerrar Session</a>
+  <a asp-controller="Libros" asp-action="PerfilUsuario" class="nav-link text-dark">Mi perfil</a>
+}

@@ -1,0 +1,20 @@
+﻿@model Libro
+ 
+<h1>Libros</h1>
+ 
+<div class="card" style="width: 28rem; float:left">
+    <h4 style="color:blue">@ViewData["DATOS"]</h4>
+    <a asp-controller="Libros" asp-action="LibrosPaginacion"
+       asp-route-posicion="@ViewData["ANTERIOR"]"
+       class="btn btn-danger">Anterior</a>
+    <a asp-controller="Libros" asp-action="LibrosPaginacion"
+       asp-route-posicion="@ViewData["SIGUIENTE"]"
+       class="btn btn-default">Siguiente</a>
+    <div class="card-body">
+        <img src="~/images/@Model.Portada" style="width:200px; height:200px" />
+        <h5 class="card-title">@Model.Titulo</h5>
+        <p class="card-text">@Model.Editorial</p>
+        <p class="card-text">@Model.Autor</p>
+ 
+    </div>
+</div>
